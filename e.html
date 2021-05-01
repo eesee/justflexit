@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.1.0/dist/aframe-extras.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRYZYZ602M"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-WRYZYZ602M');
+        </script>
+    </head>
+    <body>
+        <a-scene>
+            <a-entity id="rig" movement-controls="fly: true; speed: 0.3">
+                <a-camera position="0 1.6 0" look-controls>
+                    <a-cursor color="gold"></a-cursor>
+                </a-camera>
+            </a-entity>
+
+            <a-assets>
+                <img id="logo" src="https://images.ctfassets.net/92fo1e671z6m/2ejzF1tDsjEvaQeTPkey2c/3f5c0690c86a43955d3d7e4d3528496b/Flexport_Mark_-_alternative_white.png">
+            </a-assets>
+
+            <a-text value="Ahoy 'Porter, place your cursor (gold dot) on Logo for Instructions!" width="4" position="-2 1.65 -2.55"></a-text>
+            <a-cylinder position="0 0.75 -3" rotation="0 180 0" radius="0.5" height="1.5" color="#fff" material="src: #logo"
+                event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+                event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+
+                <a-text id="cylinderText" value="Welcome to JUST FLEX IT: Cargo & Container, The Experience!
+                    Your Mission, should you choose to accept it: FIND THE LOST CACHE OF FRESH ESSENTIAL PPE FOR FRONT LINE WORKERS aboard each of the 4 non-bonus container ships!! 
+                    Hint: PPE is NOT in any BONUS ships/scenes.
+                    If you manage to locate the missing PPE, try to remember where it was on each ship and click on the stockpile to complete your quest!
+                    Use WASD or arrow keys to move, mouse or touchpad to look around on desktop. 
+                    Navigate to other scenes by moving closely to the Circles at right and placing cursor on selection; 
+                    as color changes click on desktop or move closely and hold cursor steady for 2 seconds in VR.
+                    You may need to re-enable VR as you change scenes. 
+                    Maersk Ship and BSC Angelo are the smoothest on all platforms, so these 2 are the most stable.
+                    VR works great in most newer phones and headsets from Apple, Oculus, Samsung, Sony, Google including Cardboard though YMMV. 
+                    Rendering 1,000s of polygons can take time; if you get stuck look away from the polygons and try moving, then look back." align="center" color="#FFF" visible="false" position="0 -1.05 -0.55"
+                    geometry="primitive: plane; width: 4.75; height: 4.5" material="color: #333; transparent: true; opacity: 0.8" rotation="0 180 0">
+                </a-text>
+            </a-cylinder>
+          
+            <a-link href="index.html" title="Maersk Ship - good on most devices" position="5 0.75 -3"></a-link>
+            <a-link href="b.html" title="BSC Angelo Ship - good on most devices" position="10 0.75 -3"></a-link>
+            <a-link href="c.html" title="Evergreen Ship - desktop recommended" position="15 0.75 -3"></a-link>
+            <a-link href="d.html" title="Anna Maersk Ship - desktop recommended" position="20 0.75 -3"></a-link>
+            <a-link href="f.html" title="BONUS Safmarine Illovo Ship - tricky to navigate" position="25 0.75 -3"></a-link>
+            
+            <a-collada-model src="https://raw.githubusercontent.com/eesee/cargo-ship-exp/main/assets/crane/model.dae" position="75 -10.5 8.5" rotation="0 90 0 " scale="0.5 0.5 0.5"></a-collada-model>
+
+            <a-sky src="https://raw.githubusercontent.com/eesee/cargo-ship-exp/main/assets/sandbar.jpg" color="#ECECEC"></a-sky>            
+        </a-scene>
+    </body>
+</html>
